@@ -25,7 +25,9 @@ articlescount=$(xml sel -N atom="http://www.w3.org/2005/Atom" -N content="http:/
 articlesdone=1;
 
 while [[ $articlesdone -le $articlescount ]]; do
-    articlename=$(xml sel -N atom="http://www.w3.org/2005/Atom" -N content="http://purl.org/rss/1.0/modules/content/" -t -v "/rss/channel/item[$articlesdone]/link" meduza_rss_latest.txt | sed -E "s/https:\/\/meduza.io\/en\///" | sed -E "s/\//-/g");
+    articleurlname=$(xml sel -N atom="http://www.w3.org/2005/Atom" -N content="http://purl.org/rss/1.0/modules/content/" -t -v "/rss/channel/item[$articlesdone]/link" meduza_rss_latest.txt | sed -E "s/https:\/\/meduza.io\/en\///" | sed -E "s/\//-/g");
+    articlepubdate=$(xml sel -N atom="http://www.w3.org/2005/Atom" -N content="http://purl.org/rss/1.0/modules/content/" -t -v "/rss/channel/item[$articlesdone]/pubDate" meduza_rss_latest.txt | sed -E "s/^[^ ]* (.*) [0-9]*:.*/\1/" | sed -E "s/ /_/g");
+    articlename=$articlepubdate"_"$articleurlname;
     if [ ! -f "meduza_articles_text/"$articlename".txt" ]; then
         xml sel -N atom="http://www.w3.org/2005/Atom" -N content="http://purl.org/rss/1.0/modules/content/" -t -v "/rss/channel/item[$articlesdone]/title" meduza_rss_latest.txt > "meduza_articles_text/"$articlename".txt";
         echo "" >> "meduza_articles_text/"$articlename".txt";
