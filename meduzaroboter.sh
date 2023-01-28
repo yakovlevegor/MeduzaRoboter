@@ -36,7 +36,7 @@ while [[ $articlesdone -le $articlescount ]]; do
     fi
     if [[ $novoice -eq 0 ]]; then
         if [ ! -f "meduza_articles_voice/"$articlename".wav" ]; then
-            espeak -f "meduza_articles_text/"$articlename".txt" -s 260 -a 50 -g 6 -p 30 -w "meduza_articles_voice/"$articlename".wav";
+            cat "meduza_articles_text/"$articlename".txt" | sed -E "s/^> .*[абвгдежзиклмнопрстуфхцчшщьюя].*$//g" | espeak -s 260 -a 50 -g 6 -p 30 -w "meduza_articles_voice/"$articlename".wav";
         fi
     fi
     articlesdone=($articlesdone+1);
