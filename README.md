@@ -30,4 +30,4 @@ Don't worry, just pass an HTTP Proxy setting to the script:
 
 ## What is Meduza?
 
-[Meduza](https://meduza.io/en) is a Russian independent news agency, that the Russian government first blocked for its honest covering of the ongoing military conflict in Ukraine, and recently it became a "non-desirable" organization in Russia, hence it is now forbidden to [even mention it in public](https://meduza.io/en/cards/life-after-undesirability). You can [**❤️  donate them**](https://support.meduza.io/en) and support their enormous work against the harsh and barbaric Russian regime. The script is based on the English version of the outlet.
+[Meduza](https://meduza.io/en) is a Russian independent news agency, that the Russian government first blocked for its honest covering of the ongoing war in Ukraine, and recently it became a "non-desirable" organization in Russia, hence it is now forbidden to [even mention it in public](https://meduza.io/en/cards/life-after-undesirability). You can [**❤️  donate them**](https://support.meduza.io/en) and support their enormous work against the harsh and barbaric Russian regime. The script is based on the English version of the outlet.
